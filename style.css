@@ -1,0 +1,109 @@
+body {
+    background: linear-gradient(120deg, #ffe0ec 0%, #fff6e0 100%);
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.envelope-container {
+    position: relative;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.envelope {
+    width: 340px;
+    height: 220px;
+    position: relative;
+    perspective: 1000px;
+    z-index: 2;
+    filter: none;
+}
+.envelope-flap {
+    width: 340px;
+    height: 120px;
+    background: #f8b6c1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 20px 60px;
+    border-top-right-radius: 20px 60px;
+    transform-origin: top center;
+    transition: transform 1s cubic-bezier(.77,0,.18,1);
+    z-index: 4;
+    box-shadow: 0 2px 4px #e7a2b3;
+    filter: none;
+    opacity: 1;
+}
+.envelope-front {
+    width: 340px;
+    height: 180px;
+    background: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom-left-radius: 20px 40px;
+    border-bottom-right-radius: 20px 40px;
+    border: 2px solid #f8b6c1;
+    z-index: 3;
+}
+.envelope-letter {
+    width: 300px;
+    height: 160px;
+    background: #fff6f9;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px #e7a2b3;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(40px);
+    transition: opacity 1s 0.5s, transform 1s 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.letter-content {
+    padding: 20px;
+    text-align: center;
+    color: #c94f7c;
+    font-size: 1.2em;
+}
+.signature {
+    margin-top: 20px;
+    font-style: italic;
+    color: #b03a5b;
+}
+#openBtn {
+    margin-top: 30px;
+    padding: 12px 32px;
+    background: #f8b6c1;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    font-size: 1.1em;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #e7a2b3;
+    transition: background 0.3s;
+    z-index: 10;
+    position: relative;
+}
+#openBtn:hover {
+    background: #c94f7c;
+}
+.envelope.open .envelope-flap {
+    transform: rotateX(-120deg);
+}
+.envelope.open .envelope-letter {
+    opacity: 1;
+    transform: translateY(-20px);
+    z-index: 10;
+    pointer-events: auto;
+}
+/* Görsellerin CSS kodları kaldırıldı */
